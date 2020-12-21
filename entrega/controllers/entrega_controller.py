@@ -12,7 +12,7 @@ class EntregaController(Resource):
         quantities = request.json["quantity"]
 
         for product, quantity in zip(products, quantities): 
-            url = f"http://localhost:5004/stock/{product}"
+            url = f"http://localhost:5003/stock/{product}"
             payload = {
                 'quantity': quantity
             }

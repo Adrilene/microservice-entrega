@@ -9,6 +9,7 @@ RUN apk add --no-cache pcre
 WORKDIR /entrega
 COPY . /entrega
 RUN pip install -r /entrega/requirements.txt
+RUN pip install uwsgi
 RUN apk del .build-dependencies && rm -rf /var/cache/apk/*
 EXPOSE 5004
 CMD ["uwsgi", "--ini", "/entrega/wsgi.ini"]
